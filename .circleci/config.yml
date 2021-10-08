@@ -16,7 +16,7 @@ jobs:
             - node_modules
       - run: mkdir -p tests-report/tslint
       - run: yarn tslint --format junit -o tests-report/tslint/tslint.xml
-      - store_tests_results: 
+      - store_test_results: 
           path: tests-report
       - run: yarn build -pr false
       - run: tar -cf dist.tar dist
