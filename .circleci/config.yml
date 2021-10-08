@@ -40,6 +40,7 @@ jobs:
       - run: yarn tslint --format junit -o tests-report/tslint/tslint.xml
       - store_test_results:
           path: tests-report
+
   deploy:
     docker:
       - image: circleci/node:9
@@ -55,7 +56,7 @@ workflows:
   build-then-test:
     jobs:
       - test-lint:
-      - build
+      - build:
           requires:
             - test-lint
       - deploy: 
