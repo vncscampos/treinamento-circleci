@@ -66,7 +66,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
                 - dev
       - deploy: 
           requires:
@@ -74,5 +74,5 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
                 - dev
