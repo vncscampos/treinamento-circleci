@@ -59,6 +59,20 @@ workflows:
       - build:
           requires:
             - test-lint
-      - deploy: 
+      - hold:
+          type: approval
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
+                - dev
+      - deploy: 
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - master
+                - dev
