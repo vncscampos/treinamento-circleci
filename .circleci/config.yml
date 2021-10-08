@@ -53,9 +53,9 @@ jobs:
 
 workflows:
   version: 2
-  build-then-test:
+  test-then-build:
     jobs:
-      - test-lint:
+      - test-lint
       - build:
           requires:
             - test-lint
